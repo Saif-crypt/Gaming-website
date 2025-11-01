@@ -1,0 +1,17 @@
+body {
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 0; /* Remove default margin */
+    background-color: skyblue; /* Fallback color */
+    background-image: url("flappy\ bird2.jpg"); /* Replace with your background image */
+    background-size: cover; /* Make sure the background covers the entire area */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    background-position: center; /* Center the background image */
+    height: 100vh; /* Ensure the body takes up the full viewport height */
+}
+
+#board {
+    /* background-color: skyblue; */
+    background-image: url("./flappybirdbg.png");
+    
+}
