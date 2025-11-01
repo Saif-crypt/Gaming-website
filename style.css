@@ -1,0 +1,334 @@
+/* Video Background */
+#background-video 
+    {
+        position: fixed; /* Fix the video in place */
+        top: 50%; /* Center the video vertically */
+        left: 50%; /* Center the video horizontally */
+        width: 100vw; /* Make the width 100% of the viewport */
+        height: 100vh; /* Make the height 100% of the viewport */
+        object-fit: cover; /* Cover the screen while maintaining aspect ratio */
+        transform: translate(-50%, -50%); /* Center the video */
+        z-index: -1; /* Ensure the video is behind other content */
+    }
+
+/* Game Hover Video Effect */
+.game {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    cursor: pointer;
+    border: 2px solid #2e8b57;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #fff;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.hover-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    z-index: 10;
+    border-radius: 10px;
+}
+
+.game:hover .hover-video {
+    display: block;
+}
+
+/* Body Styles */
+body {
+    /* font-family: Arial, sans-serif; */
+    font-family: 'Press Start 2P', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('background_image.jpg'); /* Update this path */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+/* Hamburger Button Styles */
+.btn {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    background: #040f16;
+    color: #f5f5f5;
+    position: relative; /* To ensure proper placement */
+}
+
+.btn:hover {
+    box-shadow: 0 0 20px 0px #2e2e2e3a;
+}
+
+.btn .icon {
+    position: absolute;
+    height: 40px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.btn .text {
+    transform: translateX(55px);
+}
+
+.btn:hover .icon {
+    width: 175px;
+}
+
+.btn:hover .text {
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:active .icon {
+    transform: scale(0.85);
+}
+
+/* Hamburger Menu Styles */
+.menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 50px; /* Adjust position under the hamburger menu */
+    width: 260px; /* Slightly wider for padding */
+    background-color: #1f1d1d; /* Dark background for contrast */
+    border-radius: 12px; /* Curved edges */
+    padding: 15px 0; /* Added padding for cleaner spacing */
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Drop shadow for depth */
+    transition: all 0.3s ease; /* Smooth open/close transition */
+}
+
+.menu.open {
+    display: block;
+    animation: slideIn 0.4s ease; /* Slide-in animation for opening */
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    padding: 12px 20px;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    cursor: pointer;
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Vertically center items */
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.menu ul li i {
+    margin-right: 10px; /* Space between icon and text */
+    color: #bbb; /* Icon color */
+}
+
+.menu ul hr {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px 20px;
+}
+
+.menu ul li:last-child {
+    border-bottom: none; /* Remove bottom border from the last item */
+}
+
+.menu ul li:hover {
+    background-color: #333; /* Darker background on hover */
+    padding-left: 30px; /* Indentation effect on hover */
+}
+
+
+/* Slide-in Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px); /* Slide from left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Headings */
+h1 {
+    font-size: 3em;
+    margin-top: 20px;
+    color: #2e8b57;
+    font-family: 'Bangers', cursive;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #4682b4;
+}
+
+/* Game Hover Effects */
+.game:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.game img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+/* Center container for About Section */
+.center-container {
+    width: 100%; /* Full width */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text in the About section */
+    margin-top: 50px; /* Add some top margin for spacing */
+  }
+  
+  /* Styling the 'About' Section */
+  #about {
+    max-width: 1600px; /* Set max-width for better readability */
+    margin: 0 auto; /* Center section on the page */
+    padding: 20px; /* Add padding for better spacing */
+    background-color: white; /* Ensure background remains white */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  }
+  
+  /* Adjust the .card for proper centering */
+  .card {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 25px;
+    gap: 20px;
+    margin: 20px auto; /* Center the card within its container */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+  }
+  
+  /* Styling for social icons is already well-defined */
+  
+.card {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 25px;
+    gap: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+  }
+  
+  /* for all social containers*/
+  .socialContainer {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: .3s;
+  }
+  /* instagram*/
+  .containerOne:hover {
+    background-color: #d62976;
+    transition-duration: .3s;
+  }
+  /* twitter*/
+  .containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: .3s;
+  }
+  /* linkdin*/
+  .containerThree:hover {
+    background-color: #0072b1;
+    transition-duration: .3s;
+  }
+  /* Whatsapp*/
+  .containerFour:hover {
+    background-color: #128C7E;
+    transition-duration: .3s;
+  }
+  
+  .socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: .3s;
+  }
+  
+  .socialSvg {
+    width: 17px;
+  }
+  
+  .socialSvg path {
+    fill: rgb(255, 255, 255);
+  }
+  
+  .socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+  }
+  
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  
